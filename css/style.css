@@ -1,4 +1,13 @@
 :root,:root [data-theme='dark']{
     --primary-color: #f0f0f0;
-    --primary-bg-color:#111217;
+    --primary-bg-color:#132A13;
+}
+:root[data-theme='light']
+{
+    --primary-color: #000100;
+    --primary-bg-color:#BCB88A;
+}
+body{
+    background: var(--primary-bg-color);
+    color: var(--primary-color);
 }
