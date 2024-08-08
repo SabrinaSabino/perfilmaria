@@ -1,13 +1,71 @@
-:root,:root [data-theme='dark']{
+/* Google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=IM+Fell+Great+Primer+SC&display=swap');
+
+
+:root,
+:root [data-theme='dark'] {
     --primary-color: #f0f0f0;
-    --primary-bg-color:#132A13;
+    --primary-bg-color: #401524;
+    --secondary-bg-color: #28292E;
+    --primary-border-color: #28292E;
+    --secondary--border-color: #f0f0f0;
+    --title-color: #f0f0f0;
+    --link-color: #8f8f8f;
+    --link-hover: #f0f0f0;
+    --icon-color: #C7C8C9;
 }
-:root[data-theme='light']
-{
+
+:root[data-theme='light'] {
     --primary-color: #000100;
-    --primary-bg-color:#BCB88A;
+    --primary-bg-color: #BCB88A;
+    --secondary-bg-color: #c7c8c9;
+    --primary-border-color: #c7c8c9;
+    --secondary--border-color: #9a9a9c;
+    --title-color: #0b0b0f;
+    --link-hover: #a3a2a2;
+    --link-color: #0b0b0f;
+    --icon-color: #56575a;
 }
-body{
+
+* {
+    margin: 0;
+    /*margem */
+    padding: 0px;
+    /* preenchimento */
+    box-sizing: border-box;
+    vertical-align: baseline;
+    list-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-bg-color) transparent;
+}
+
+body {
     background: var(--primary-bg-color);
     color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    z-index: 2;
+}
+
+.header-logo .logo {
+    width: 3.25rem;
+    height: 3.25rem;
+
 }
