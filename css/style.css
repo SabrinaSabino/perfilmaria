@@ -12,7 +12,7 @@
     --secondary--border-color: #f0f0f0;
     --title-color: #f0f0f0;
     --link-color: #8f8f8f;
-    --link-hover: #f0f0f0;
+    --link-hover: #ffffff;
     --icon-color: #C7C8C9;
 }
 
@@ -80,8 +80,32 @@ a:hover {
     background: var(--primary-bg-color);
     gap: 1rem;
 }
-    .menu-link{
+ .menu-link{
         display: flex;
         align-items: center;
         gap: .5rem;
-    }
+ }
+ .menu-mobile{
+    width: 100%;
+    position: fixed;
+    bottom: 0 ;
+    justify-content: space-between;
+    border-top: 2px solid var(--primary-border-color);
+ }
+ .menu-mobile .menu-link{
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 1rem; 
+ }
+
+.menu-link.active .menu-icon,
+.menu-link.active .menu-text,
+.menu-link:hover .menu-icon,
+.menu-link:hover .menu-text {
+    color: var(--link-hover);
+}
+
+.menu-icon, .menu-text {
+    color: var(--link-color);
+    font-weight: 600 ;
+}
