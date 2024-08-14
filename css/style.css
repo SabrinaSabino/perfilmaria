@@ -74,6 +74,7 @@ a:hover {
     cursor: pointer;
     transition: ease-in-out .4s;
 }
+
 .menu {
     display: flex;
     align-items: center;
@@ -108,4 +109,32 @@ a:hover {
 .menu-icon, .menu-text {
     color: var(--link-color);
     font-weight: 600 ;
+}
+
+.menu-icon{
+    font-size: 1.5rem;
+}
+
+.menu-text{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.header-nav{
+    display: none
+}
+.menu.principal {
+    gap: 1rem
+}
+@media (min-width: 768px){
+    .header{
+        position: fixed;
+        border-bottom: 1px solid var(--primary-border-color);
+        padding: 1rem 6rem;
+    }
+}
+.nav-mobile{
+    display:none
+}
+.header-nav {
+    display: flex;
 }
