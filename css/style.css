@@ -1,38 +1,43 @@
-/* Google fonts*/
+/*  Google Fonts */  /* Atalho para Comentar Shift + ALT + A  */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=IM+Fell+Great+Primer+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-
-:root,
-:root [data-theme='dark'] {
-    --primary-color: #f0f0f0;
-    --primary-bg-color: #401524;
-    --secondary-bg-color: #28292E;
+/* Variaveis das Cores */
+/* TEMA DARK */
+:root, :root[data-theme='dark'] {
+    --primary-color: #f0f0f0;  /*cor principal Textos*/
+    --primary-bg-color: #401524;  /*cor principal Fundo*/ 
+    /* bg = background == cor do Fundo */
+    --secondary-bg-color: #28292E;  
     --primary-border-color: #28292E;
-    --secondary--border-color: #f0f0f0;
-    --title-color: #f0f0f0;
+    --secondary-border-color: #56575A;
+    --title-color: #F0F0F0;
+    
     --link-color: #8f8f8f;
-    --link-hover: #ffffff;
+    --link-hover: #F0F0F0;
+
     --icon-color: #C7C8C9;
 }
-
+/* TEMA LIGHT */
 :root[data-theme='light'] {
-    --primary-color: #000100;
-    --primary-bg-color: #BCB88A;
-    --secondary-bg-color: #c7c8c9;
-    --primary-border-color: #c7c8c9;
-    --secondary--border-color: #9a9a9c;
-    --title-color: #0b0b0f;
-    --link-hover: #a3a2a2;
-    --link-color: #0b0b0f;
-    --icon-color: #56575a;
+    --primary-color: #0d0c09; /* cor principal textos */
+
+    --primary-bg-color: #f3f3f3;
+    --secondary-bg-color: #C7C8C9;
+
+    --primary-border-color: #a8a6a6;
+	--secondary-border-color: #9A9A9C;
+
+	--title-color: #0B0B0F;
+	--link-hover: #a3a2a2;
+	--link-color: #0B0B0F;
+	--icon-color: #56575A;
 }
 
+/* Reset CSS */
 * {
-    margin: 0;
-    /*margem */
-    padding: 0px;
-    /* preenchimento */
+    margin: 0; /*margem */
+    padding: 0px; /* preenchimento */
     box-sizing: border-box;
     vertical-align: baseline;
     list-style: none;
@@ -41,8 +46,9 @@
 }
 
 body {
-    background: var(--primary-bg-color);
-    color: var(--primary-color);
+    background: var(--primary-bg-color); /*cor fundo*/
+    color: var(--primary-color);  /*cor geral dos textos*/
+    font-family: 'Playwrite', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -54,22 +60,29 @@ a:hover {
     color: var(--link-hover);
 }
 
+i {
+   color: var(--icon-color); 
+}
+
 .header {
     display: flex;
     flex-flow: row wrap;
+    /* Coloca o conteúdo em linha e permite a quebra de linha. */
     justify-content: space-between;
+    /* Os itens dentro do container flexível serão distribuídos de maneira uniforme ao longo do eixo principal, com espaços iguais entre eles.  */
     align-items: center;
     width: 100%;
     padding: 0.5rem 1rem;
-    z-index: 2;
+    z-index: 2;/*sobreposição*/
 }
-
-.header-logo .logo {
+   
+.header-logo .logo{
     width: 3.25rem;
     height: 3.25rem;
 }
-#toggleTheme{
-    font-size: 1.5rem;
+
+#toggleTheme {
+    font-size: 1.5rem; 
     color: var(--icon-color);
     cursor: pointer;
     transition: ease-in-out .4s;
@@ -77,27 +90,31 @@ a:hover {
 
 .menu {
     display: flex;
+    /* Torna o Elemento um Flex container automaticamente transformando todos os filhos diretos em Flex Itens  */
     align-items: center;
     background: var(--primary-bg-color);
     gap: 1rem;
+} 
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
- .menu-link{
-        display: flex;
-        align-items: center;
-        gap: .5rem;
- }
- .menu-mobile{
+
+.menu-mobile {   /* UL */
     width: 100%;
     position: fixed;
-    bottom: 0 ;
+    bottom: 0;
     justify-content: space-between;
-    border-top: 2px solid var(--primary-border-color);
- }
- .menu-mobile .menu-link{
+    border-top: 1px solid var(--primary-border-color);
+}
+
+.menu-mobile .menu-link {
     flex-direction: column;
     justify-content: center;
-    padding: 0.5rem 1rem; 
- }
+    padding: .5rem 1rem;
+}
 
 .menu-link.active .menu-icon,
 .menu-link.active .menu-text,
@@ -108,33 +125,41 @@ a:hover {
 
 .menu-icon, .menu-text {
     color: var(--link-color);
-    font-weight: 600 ;
+    font-weight: 600;
 }
 
-.menu-icon{
+.menu-icon {
     font-size: 1.5rem;
 }
 
-.menu-text{
-    font-size: 0.75rem;
+.menu-text {
+    font-size: .75rem;
     text-transform: uppercase;
 }
-.header-nav{
-    display: none
+
+.header-nav {
+    display: none;
 }
-.menu.principal {
-    gap: 1rem
+
+.menu-principal {
+    gap: 1rem;
 }
-@media (min-width: 768px){
-    .header{
+
+
+/* =====  --------------------- ======= */
+
+/* CSS Responsivo */
+@media (min-width: 768px)  {
+    .header {
         position: fixed;
-        border-bottom: 1px solid var(--primary-border-color);
+        border-bottom: 3px solid var(--primary-border-color);
         padding: 1rem 6rem;
     }
+    .nav-mobile {
+        display: none;
+    }
+    .header-nav {
+        display: flex;
+    }
 }
-.nav-mobile{
-    display:none
-}
-.header-nav {
-    display: flex;
-}
+
