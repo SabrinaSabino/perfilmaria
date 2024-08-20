@@ -81,6 +81,15 @@ i {
     height: 3.25rem;
 }
 
+.header-logo .logo2{
+    width: 6.25rem;
+    height: 1.25rem;
+}
+
+html[data-theme='light'].logo {
+    filter: invert(1);
+}
+
 #toggleTheme {
     font-size: 1.5rem; 
     color: var(--icon-color);
