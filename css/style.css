@@ -76,17 +76,16 @@ i {
     z-index: 2;/*sobreposição*/
 }
    
-.header-logo .logo{
-    width: 3.25rem;
-    height: 3.25rem;
-}
 
 .header-logo .logo2{
-    width: 6.25rem;
-    height: 1.25rem;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 10px;
+    position: relative;
+    bottom: -10px;
 }
 
-html[data-theme='light'].logo {
+html[data-theme='light'] .logo2{
     filter: invert(1);
 }
 
