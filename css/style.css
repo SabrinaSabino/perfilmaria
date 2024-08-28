@@ -153,8 +153,105 @@ html[data-theme='light'] .logo2{
     gap: 1rem;
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.62rem;
+    width: 100%;
+    background: transparent;
+    border-radius: 3rem;
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    transition: ease-in-out .3s;
+}
 
+.btn-primary {
+    border: 1px solid var(--secondary-border-color);
+}
 
+.btn:hover {
+    transform: scale(1.07);
+    transition: ease-in-out 0.5s;
+}
+
+.btn span,
+.btn i {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+.btn-primary span {
+    color: var(--primary-color);
+}
+#home {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.video iframe{
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+#home,.projetos,.sobre,.contato {
+padding: 5rem 5rem;
+}
+.projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.projetos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.card-title {
+    font-size: 2rem;
+    color: var(--title-color);
+    font-weight: 400;
+    
+}
+.card-description{
+    color: var(--primary-color);  
+    text-align: justify;
+}
+.card-lista {
+ margin-left: 1.25rem;   
+}
+.card-item {
+    list-style: circle;
+    margin: 0.25rem;
+}
+.card-botton, .card-description{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.card-button, .card-description {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.card-button .ptn{ 
+    padding: 0.65rem 1.26rem;
+}
+.card-button span{
+    font-size: 1rem;
+}
 /* CSS Responsivo */
 @media (min-width: 768px)  {
     .header {
@@ -169,4 +266,3 @@ html[data-theme='light'] .logo2{
         display: flex;
     }
 }
-
