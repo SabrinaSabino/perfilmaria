@@ -6,11 +6,11 @@
 /* TEMA DARK */
 :root, :root[data-theme='dark'] {
     --primary-color: #f0f0f0;  /*cor principal Textos*/
-    --primary-bg-color: #401524;  /*cor principal Fundo*/ 
+    --primary-bg-color: #171111;  /*cor principal Fundo*/ 
     /* bg = background == cor do Fundo */
     --secondary-bg-color: #28292E;  
     --primary-border-color: #28292E;
-    --secondary-border-color: #56575A;
+    --secondary-border-color: #c1c2c4;
     --title-color: #F0F0F0;
     
     --link-color: #8f8f8f;
@@ -22,10 +22,10 @@
 :root[data-theme='light'] {
     --primary-color: #0d0c09; /* cor principal textos */
 
-    --primary-bg-color: #f3f3f3;
+    --primary-bg-color: #f0f2f5;
     --secondary-bg-color: #C7C8C9;
 
-    --primary-border-color: #a8a6a6;
+    --primary-border-color: #C7C8C9;
 	--secondary-border-color: #9A9A9C;
 
 	--title-color: #0B0B0F;
@@ -76,6 +76,10 @@ i {
     z-index: 2;/*sobreposição*/
 }
    
+.header-logo .logo{
+    width: 3.25rem;
+    height: 3.25rem;
+}
 
 .header-logo .logo2{
     width: 5rem;
@@ -85,9 +89,13 @@ i {
     bottom: -10px;
 }
 
-html[data-theme='light'] .logo2{
+html[data-theme='light'] .logo {
     filter: invert(1);
-}
+} 
+
+html[data-theme='light'] .logo2 {
+    filter: invert(1);
+} 
 
 #toggleTheme {
     font-size: 1.5rem; 
@@ -153,6 +161,10 @@ html[data-theme='light'] .logo2{
     gap: 1rem;
 }
 
+.menu-social {
+   gap: 1rem; 
+}
+
 .btn {
     display: flex;
     justify-content: center;
@@ -195,63 +207,83 @@ html[data-theme='light'] .logo2{
     flex-direction: column;
     gap: 1.5rem;
 }
+
 .video iframe{
     width: 100%;
     aspect-ratio: 16/9;
 }
-#home,.projetos,.sobre,.contato {
-padding: 5rem 5rem;
+
+#home, .projetos, .sobre, .contato {
+    padding: 5rem 5rem;
 }
+
 .projetos {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
 }
 .projetos-container {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
+
+.card-cover {
+    width: 100%;
+    border-radius: 2rem;
+    object-fit: cover;
+    object-position: center;
+}
+
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: flex-start;
     gap: 1rem;
 }
+
 .card-title {
     font-size: 2rem;
     color: var(--title-color);
     font-weight: 400;
-    
+    font-family: 'Poppins';
 }
-.card-description{
-    color: var(--primary-color);  
+
+.card-description {
+    color: var(--primary-color);
+    /* font-size: ; */
     text-align: justify;
 }
+
 .card-lista {
- margin-left: 1.25rem;   
+    margin-left: 2rem;
 }
+
 .card-item {
     list-style: circle;
     margin: 0.25rem;
 }
-.card-botton, .card-description{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
+
 .card-button, .card-description {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
-.card-button .ptn{ 
-    padding: 0.65rem 1.26rem;
+
+.card-button .btn {
+    padding: .65rem 1.25rem;
 }
-.card-button span{
+
+.card-button .btn span {
     font-size: 1rem;
 }
+
+
+
+
+/* =====  --------------------- ======= */
+
 /* CSS Responsivo */
 @media (min-width: 768px)  {
     .header {
@@ -264,5 +296,67 @@ padding: 5rem 5rem;
     }
     .header-nav {
         display: flex;
+    }
+    .header-nav, 
+    .header-toggle{
+    min-width: 30%;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    #home, .projetos, .sobre, .contato {
+        padding: 8rem 6rem 4rem 6rem;
+    }
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contato {
+        padding: 6rem;
+    }
+    .contato p {
+        width: 80%;
+    }
+    footer {
+        margin: 0;
+    }
+
+
+}
+
+
+
+@media (min-width: 992px) {
+    .projeto-card {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .card-reverse {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .card-cover {
+        width: 55%;
+    }
+    .sobre {
+        gap: 5rem;
+    }
+    .sobre-content1, .sobre-content2 {
+        display: grid;
+        grid-template-columns: 34% 60%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+    .sobre-descricao h2 {
+        text-align: left;
+    }
+    .descricao-button {
+        justify-content: flex-start;
     }
 }
