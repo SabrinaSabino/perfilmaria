@@ -37,7 +37,7 @@
 /* Reset CSS */
 * {
     margin: 0; /*margem */
-    padding: 0px; /* preenchimento */
+    padding: 0; /* preenchimento */
     box-sizing: border-box;
     vertical-align: baseline;
     list-style: none;
@@ -63,7 +63,9 @@ a:hover {
 i {
    color: var(--icon-color); 
 }
-
+b{
+    font-weight: 400;
+}
 .header {
     display: flex;
     flex-flow: row wrap;
@@ -81,6 +83,7 @@ i {
     height: 3.25rem;
 }
 
+
 .header-logo .logo2{
     width: 5rem;
     height: 5rem;
@@ -88,6 +91,8 @@ i {
     position: relative;
     bottom: -10px;
 }
+
+
 
 html[data-theme='light'] .logo {
     filter: invert(1);
@@ -102,6 +107,8 @@ html[data-theme='light'] .logo2 {
     color: var(--icon-color);
     cursor: pointer;
     transition: ease-in-out .4s;
+    float: right;
+    position: relative;
 }
 
 .menu {
@@ -228,6 +235,12 @@ html[data-theme='light'] .logo2 {
     gap: 4rem;
 }
 
+.projeto-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .card-cover {
     width: 100%;
     border-radius: 2rem;
@@ -279,8 +292,137 @@ html[data-theme='light'] .logo2 {
     font-size: 1rem;
 }
 
+/* === Sobre === */
+.sobre {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
+.sobre-content1, .sobre-content2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
 
+.sobre-perfil {   /* imagem */
+    width: 100%;
+    border-radius: 50rem;
+    border: 8px solid var(--link-color); /* cor da borda */
+}
+
+.sobre-descricao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: justify;
+    gap: 1rem;
+}
+
+.sobre-icones {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.sobre-icones i {
+    font-size: 1.25rem;
+}
+
+.sobre-content2 .col1,
+.sobre-content2 .col2 {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 1rem;
+}
+
+.sobre-content2 .col1 .row1,
+.sobre-content2 .col1 .row2 {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.accordion-header {
+    width: 100%;
+    display: flex;
+    padding: 0.75rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--primary-border-color);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: ease-in-out .3s;
+    border-radius: 0;
+}
+.accordion-header span {
+    color: var(--title-color);
+}
+
+.accordion-header.start {
+    border-radius: 1rem 1rem 0rem 0rem;
+}
+  
+.accordion-header.end,
+.accordion-item.active .accordion-body.end {
+    border-radius: 0rem 0rem 1rem 1rem;
+}
+  
+.accordion-item.active .accordion-header.end{
+    border-radius: 0;
+}
+
+.accordion-body {
+    display: none;
+    padding: 1.25rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .625rem;
+    border: 1px solid var(--primary-border-color);
+}
+.accordion-item.active .accordion-header {
+    background: var(--secondary-bg-color);
+}
+.accordion-item.active .accordion-body {
+    display: flex;
+}
+.accordion-item.active .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
+
+/* Contato */
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--secondary-border-color);
+}
+.contato p {
+    text-align: center;
+}
+
+.contato .btn {
+    width: auto;
+}
+
+.contato .email {
+    text-transform: uppercase;
+}
+
+/* Roda Pé = Footer */
+footer {
+    margin-bottom: 5rem;
+}
+footer p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
 
 /* =====  --------------------- ======= */
 
@@ -298,11 +440,11 @@ html[data-theme='light'] .logo2 {
         display: flex;
     }
     .header-nav, 
-    .header-toggle{
-    min-width: 30%;
+    .header-toggle {
+        min-width: 30%;
     }
     h1 {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     h2 {
         font-size: 3rem;
@@ -324,17 +466,15 @@ html[data-theme='light'] .logo2 {
     footer {
         margin: 0;
     }
+}  
 
 
-}
-
-
+/* -------- fim resolução 768 */
 
 @media (min-width: 992px) {
     .projeto-card {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: row;
+        margin-bottom: 50px;
     }
     .card-reverse {
         flex-direction: row-reverse;
@@ -346,7 +486,8 @@ html[data-theme='light'] .logo2 {
     .sobre {
         gap: 5rem;
     }
-    .sobre-content1, .sobre-content2 {
+    .sobre-content1, 
+    .sobre-content2 {
         display: grid;
         grid-template-columns: 34% 60%;
         justify-content: flex-start;
@@ -358,5 +499,45 @@ html[data-theme='light'] .logo2 {
     }
     .descricao-button {
         justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1200px) {
+    h2 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    #home {
+        padding: 10rem 6rem 2rem;
+    }
+    .main-content .btn {
+        width: auto;
+    }
+    p, span, li {
+        font-size: 1.15rem;
+    }
+    .card-button .btn,
+    .descricao-button .btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 1400px) {
+    h1 {
+        font-size: 6.25rem;
+    }
+    h2 {
+        font-size: 4.5rem;
+    }
+    h3 {
+        font-size: 3.25rem;
+    }
+    .header {
+        padding: 12rem 15rem 2rem;
+    }
+    .projetos, .sobre {
+        padding: 10rem 15rem 4rem;
     }
 }
